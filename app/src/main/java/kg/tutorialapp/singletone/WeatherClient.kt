@@ -9,7 +9,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 
-object WeatherClient {
+object WeatherClient : WeatherApi{
 
 
 
@@ -33,5 +33,20 @@ object WeatherClient {
     }
      val weatherApi by lazy {
         retrofit.create(WeatherClient::class.java)
+    }
+
+    override fun getWeather(): Call<ForeCast> {
+        TODO("Not yet implemented")
+    }
+
+    override fun fetWeatherUsingQuerry(
+        lat: Double,
+        lon: Double,
+        exclude: String,
+        lang: String,
+        appid: String,
+        units: String
+    ) {
+        TODO("Not yet implemented")
     }
 }

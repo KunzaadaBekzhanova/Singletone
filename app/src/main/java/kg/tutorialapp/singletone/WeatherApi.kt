@@ -1,5 +1,6 @@
 package kg.tutorialapp.singletone
 
+
 import kg.tutorialapp.singletone.models.ForeCast
 import retrofit2.Call
 import retrofit2.http.GET

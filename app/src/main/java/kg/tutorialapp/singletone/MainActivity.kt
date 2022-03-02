@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private fun fetchWeatherUsingQuerry() {
         val textView: TextView = findViewById(R.id.textView)
         val textView2: TextView = findViewById(R.id.textView1)
-        val call = WeatherClient.fetWeatherUsingQuerry(lat = 40.5140, lon = 72.161, lang = "en")
+        val call = weatherApi.fetWeatherUsingQuerry(lat = 40.5140, lon = 72.161, lang = "en")
         call.enqueue(object : Callback<ForeCast> {
             override fun onResponse(call: Call<ForeCast>, response: Response<ForeCast>) {
                 if (response.isSuccessful) {
@@ -44,4 +44,8 @@ class MainActivity : AppCompatActivity() {
 
         })
     }
+}
+
+private fun Unit.enqueue(callback: Callback<ForeCast>) {
+
 }
